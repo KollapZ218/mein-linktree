@@ -317,8 +317,14 @@ if (saved) {
   const savedAvatar = localStorage.getItem('myProfileAvatar');
   const savedZoom = Number(localStorage.getItem('myProfileAvatarZoom')) || 100;
   zoom = savedZoom; avatarZoom.value = String(zoom);
-  if (savedAvatar) updateAvatar(savedAvatar);
-  else { avatarPreview.src = mainAvatar.src; }
+  
+if (savedAvatar) {
+  updateAvatar(savedAvatar);
+} else {
+  mainAvatar.src = "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&auto=format&fit=crop&q=80";
+  avatarPreview.src = mainAvatar.src;
+}
+
   mainAvatar.style.transform = `scale(${zoom / 100})`;
   avatarPreview.style.transform = `scale(${zoom / 100})`;
   renderLinks();
