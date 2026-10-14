@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09051a">
+  <title>Mein Galaxie-Linktree</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="stars stars-back" aria-hidden="true"></div>
+  <div class="stars stars-front" aria-hidden="true"></div>
+  <div class="nebula nebula-one" aria-hidden="true"></div>
+  <div class="nebula nebula-two" aria-hidden="true"></div>
+<div class="shooting-star star-one"></div>
+<div class="shooting-star star-two"></div>
+<div class="shooting-star star-three"></div>
+<div class="shooting-star star-four"></div>
+<div class="shooting-star star-five"></div>
+
+
+
+  <main class="profile">
+    <div class="avatar-frame">
+      <img id="main-avatar" class="avatar" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fee?w=400" alt="Profilbild">
+    </div>
+    <h1 id="profile-name">KollapZ</h1>
+    <p id="profile-bio">Willkommen auf meiner Seite ✨</p>
+    <nav class="links" aria-label="Meine Links"></nav>
+    <p class="footer-note">✦ finde mich im Universum ✦</p>
+  </main>
+
+  <button id="admin-open" class="admin-open" type="button">⚙️ Profil bearbeiten</button>
+
+  <dialog id="admin-dialog">
+    <form method="dialog" class="dialog-top"><h2>Dein Linktree</h2><button id="admin-close" class="close-button" type="button" aria-label="Schließen">✕</button></form>
+    <section class="avatar-editor">
+      <h3>Profilbild</h3>
+      <img id="avatar-preview" class="avatar-preview" alt="Vorschau des Profilbilds">
+      <label class="file-label" for="avatar-upload">Bild vom Gerät auswählen</label>
+      <input id="avatar-upload" type="file" accept="image/*">
+      <label for="avatar-zoom">Zoom</label>
+      <input id="avatar-zoom" type="range" min="100" max="200" value="100">
+      <button id="save-avatar" type="button">Profilbild speichern</button>
+    </section>
+    <label for="name-input">Dein Name</label>
+    <input id="name-input" type="text" maxlength="60" placeholder="Dein Name">
+    <label for="bio-input">Deine Bio</label>
+    <textarea id="bio-input" maxlength="180" rows="3" placeholder="Schreibe etwas über dich"></textarea>
+    <h3>Deine Links</h3>
+    <div id="admin-links"></div>
+    <div class="dialog-actions">
+      <button id="add-link" type="button">＋ Link hinzufügen</button>
+      <button id="save-links" type="button">Änderungen speichern</button>
+    </div>
+    <p class="small-note">Änderungen werden in diesem Browser auf diesem Gerät gespeichert.</p>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
