@@ -19,7 +19,9 @@ body { margin: 0; min-height: 100vh; padding: 28px 18px 90px; display: grid; pla
 .nebula-two { background: radial-gradient(circle, #00d9ff 0%, #1d4ed8 24%, transparent 68%); bottom: -42vmax; right: -24vmax; animation: nebulaFloat 32s ease-in-out infinite alternate-reverse; }
 .profile { width: min(100%, 390px); position: relative; z-index: 1; padding: 34px 25px 22px; text-align: center; border: 1px solid #bb74ffb8; border-radius: 28px; background: linear-gradient(145deg, #17102beF, #0c1024eF 70%, #180d2aef); box-shadow: 0 0 24px #a855f744, 0 0 90px #7137c622, inset 0 0 30px #ffffff05; backdrop-filter: blur(18px); animation: cardFloat 7s ease-in-out infinite; }
 .profile::before { content: ''; position: absolute; inset: -1px; border-radius: inherit; padding: 1px; background: linear-gradient(130deg, #c084fc, transparent 35%, #22d3ee 65%, #ec4899); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: .75; }
-.avatar-frame { width: 116px; height: 116px; margin: 0 auto 18px; display: grid; place-items: center; border-radius: 50%; padding: 4px; background: conic-gradient(from 0deg, var(--cyan), var(--violet), var(--pink), var(--cyan)); box-shadow: 0 0 20px #22d3ee55, 0 0 36px #a855f744; animation: ringSpin 8s linear infinite; }
+
+
+
 
 .avatar {
   width: 110px;
@@ -879,4 +881,21 @@ a:active {
   width: 5px;
   height: 5px;
   opacity: 1;
+}
+
+/* Profilbild auf Mobilgeräten sichtbar halten */
+.avatar-frame {
+  display: grid;
+  place-items: center;
+  overflow: visible;
+}
+
+.avatar-frame img.avatar {
+  display: block;
+  width: 110px;
+  height: 110px;
+  max-width: none;
+  opacity: 1;
+  visibility: visible;
+  object-fit: cover;
 }
